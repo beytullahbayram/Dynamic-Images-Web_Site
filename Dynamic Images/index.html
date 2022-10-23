@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="hero">
+        <div class="navbar">
+            <img src="./kisspng-the-witcher-3-wild-hunt-.png" alt="logo">
+            <div class="user">
+                <button type="button">Explore</button>
+                <img src="./unnamed.jpg" alt="logo">
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="info">
+                <h1>WITCHER</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.< Numquam blanditiis placeat nemo porro vitae, libero vero odit obcaecati beatae voluptas distinctio doloremque. Amet commodi, suscipit inventore facere ad aliquid aspernatur?</p>
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+
+            <div class="slider">
+                <img src="./left-arrow.png" id="prev">
+                <div class="preview">
+                    <img src="./1.png" class=" active thumbnail">
+                    <img src="./2.jpg" class="thumbnail">
+                    <img src="./3.jpg" class="thumbnail">
+                    <img src="./4.jpg" class="thumbnail">
+                    <img src="./5.jpg" class="thumbnail">
+
+                    </div>
+                <img src="./right-arrow.png" id="next">
+            </div>
+    </div>
+
+    <script>
+
+        var prev = document.getElementById("prev");
+        var next = document.getElementById("next");
+        var thumbnail = document.getElementsByClassName("thumbnail");
+        var hero = document.getElementById("hero");
+
+        var backgroundImg = new Array(
+            "./a.png",
+            "./b.jpg",
+            "./c.jpg",
+            "./d.jpg",
+            "./f.jpg",
+        );
+
+        let i = 0;
+        next.onclick = function(){
+            if(i < 4){
+            hero.style.backgroundImage = 'url("'+backgroundImg[i+1]+'")';
+            thumbnail[i+1].classList.add("active");
+            thumbnail[i].classList.remove("active");
+            i++;
+            }
+        }
+
+        prev.onclick = function(){
+            if(i > 0){
+            hero.style.backgroundImage = 'url("'+backgroundImg[i-1]+'")';
+            thumbnail[i-1].classList.add("active");
+            thumbnail[i].classList.remove("active");
+            i--;
+            }
+        }
+    </script>
+
+</body>
+</html>
